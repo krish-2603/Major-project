@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Solway', serif;
+    font-weight: 700;
+
+} 
+main{
+    width: 100%;
+    height: fit-content;
+    color: white;
+}
+body{
+    background-image: url('https://tse1.mm.bing.net/th?id=OIP.otT6nfZI4ehAVK2ZznGLvQHaNL&pid=Api&P=0');
+    height: 150%;
+
+}
+
+header{
+    width: 100%;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9ca39efd;
+    position: fixed;
+    top: 0px;
+}
+
+
+#App_Name{
+    font-weight: 700;
+    font-size: 18px;
+}
+#App_Name span{
+    font-size: 20px;
+    font-weight: 800;
+    color: rgb(148, 34, 129);
+}
+.App_Icon{
+    width: 40px;
+}
+
+/* Form Style */
+form{
+    margin: 5em  auto 0em auto;
+    width: 70%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+.Search_Field{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#Search_Place{
+    width: 100%;
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+}
+#Search_Place:focus{
+    outline: none;
+}
+#ErrorMsg{
+    text-transform: capitalize;
+    font-weight: 400;
+    background-color: red;
+    font-size: 12px;
+    font-style: italic;
+    padding: 0.8em;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    opacity: 0;
+    word-spacing: 5px;
+}
+#SearchButton{
+    width: 15%;
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(134, 129, 182);
+    color: white;
+    border: 1px solid white;
+}
+#SearchButton:hover{
+    cursor: pointer;
+    background-color: rgba(15, 10, 63, 0);
+}
+
+.Weather_Container{
+    margin: 1em 0em;
+    width: 100%;
+    height: 90vh;
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    opacity: 1;
+}
+
+.CurrentWeather_Container{
+    box-shadow: rgba(212, 124, 9, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    background-color: #afabb079;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.CurrentWeather_Container:hover{
+    transform: scale(0.95);
+}
+
+.CurrentWeather_Container .CurrentWeather{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    text-align: center;
+}
+
+.CurrentWeather_Container .CurrentWeather .DateTime_Container{
+    border-bottom: 2px solid white;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 0.8em;
+}
+#Place_Name{
+    width: 80%;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.281);
+}
+.Weather_Details{
+    width: 95%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1em;
+
+    padding: 0.5em;
+}
+.Weather_Item{
+    background-color: rgba(128, 128, 128, 0.281);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.2em;
+}
+.Weather_Item p{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#WeatherConditionBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h5{
+    font-size: 12px;
+    border-bottom: 1px solid white;
+    padding: 0.5em;
+    width: 100%;
+    text-align: center;
+}
+h5 i{
+    font-size: 15px;
+    margin-left: 5px;
+}
+.ForeCastItem1{
+    background-color: #afabb079;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    left: 400px;
+    top: 200px;
+}
+.ForeCastItem1:hover{
+    transform: scale(0.95);
+}
+
+.ForeCastItem1 .ForeCastItem-Details{
+    width: 100%;
+    height: 90%;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.ForeCastItem1 .ForeCastItem-Details p, .ConditionBox{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1em 0em;
+    gap: 0.4em;
+    background-color: rgba(252, 249, 246, 0.144);
+}
+.ForeCastItem1 .ForeCastItem-Details .ConditionBox p{
+    background-color: transparent;
+}
+.ForeCastItem1 .ForeCastItem-Details .ConditionBox img{
+    width: 100px;
+
+}
+#ConditionIcon img{
+    width: 50px;
+
+}
+.ForeCastItem2{
+    background-color: #afabb079;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    left: 750px;
+    top: 200px;
+}
+.ForeCastItem2:hover{
+    transform: scale(0.95);
+}
+
+.ForeCastItem2 .ForeCastItem-Details{
+    width: 100%;
+    height: 90%;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.ForeCastItem2 .ForeCastItem-Details p, .ConditionBox{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1em 0em;
+    gap: 0.4em;
+    background-color: rgba(249, 246, 252, 0.144);
+}
+.ForeCastItem2 .ForeCastItem-Details .ConditionBox p{
+    background-color: transparent;
+}
+.ForeCastItem2 .ForeCastItem-Details .ConditionBox img{
+    width: 100px;
+
+}
+.ForeCastItem3{
+    background-color: #afabb079;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    left: 1100px;
+    top: 200px;
+}
+.ForeCastItem3:hover{
+    transform: scale(0.95);
+}
+
+.ForeCastItem3 .ForeCastItem-Details{
+    width: 100%;
+    height: 90%;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.ForeCastItem3 .ForeCastItem-Details p, .ConditionBox{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1em 0em;
+    gap: 0.4em;
+    background-color: rgba(249, 246, 252, 0.144);
+}
+.ForeCastItem3 .ForeCastItem-Details .ConditionBox p{
+    background-color: transparent;
+}
+.ForeCastItem3 .ForeCastItem-Details .ConditionBox img{
+    width: 100px;
+
+}
+.ForeCastItem4{
+    background-color: #afabb079;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    left: 50px;
+    top: 650px;
+}
+.ForeCastItem4:hover{
+    transform: scale(0.95);
+}
+
+.ForeCastItem4 .ForeCastItem-Details{
+    width: 100%;
+    height: 90%;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.ForeCastItem4 .ForeCastItem-Details p, .ConditionBox{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1em 0em;
+    gap: 0.4em;
+    background-color: rgba(249, 246, 252, 0.144);
+}
+.ForeCastItem4 .ForeCastItem-Details .ConditionBox p{
+    background-color: transparent;
+}
+.ForeCastItem4 .ForeCastItem-Details .ConditionBox img{
+    width: 100px;
+
+}
+.ForeCastItem5{
+    background-color: #afabb079;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    left: 400px;
+    top: 650px;
+}
+.ForeCastItem5:hover{
+    transform: scale(0.95);
+}
+
+.ForeCastItem5 .ForeCastItem-Details{
+    width: 100%;
+    height: 90%;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.ForeCastItem5 .ForeCastItem-Details p, .ConditionBox{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1em 0em;
+    gap: 0.4em;
+    background-color: rgba(249, 246, 252, 0.144);
+}
+.ForeCastItem5 .ForeCastItem-Details .ConditionBox p{
+    background-color: transparent;
+}
+.ForeCastItem5 .ForeCastItem-Details .ConditionBox img{
+    width: 100px;
+
+}
+.ForeCastItem6{
+    background-color: #afabb079;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    left: 750px;
+    top: 650px;
+}
+.ForeCastItem6:hover{
+    transform: scale(0.95);
+}
+
+.ForeCastItem6 .ForeCastItem-Details{
+    width: 100%;
+    height: 90%;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.ForeCastItem6 .ForeCastItem-Details p, .ConditionBox{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1em 0em;
+    gap: 0.4em;
+    background-color: rgba(249, 246, 252, 0.144);
+}
+.ForeCastItem6 .ForeCastItem-Details .ConditionBox p{
+    background-color: transparent;
+}
+.ForeCastItem6 .ForeCastItem-Details .ConditionBox img{
+    width: 100px;
+}
+
+.ForeCastItem7{
+    background-color: #afabb079;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; 
+    height: 400px;
+    position: absolute;
+    left: 1100px;
+    top: 650px;
+}
+.ForeCastItem7:hover{
+    transform: scale(0.95);
+}
+
+.ForeCastItem7 .ForeCastItem-Details{
+    width: 100%;
+    height: 90%;
+    padding: 0.5em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.ForeCastItem7 .ForeCastItem-Details p, .ConditionBox{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1em 0em;
+    gap: 0.4em;
+    background-color: rgba(249, 246, 252, 0.144);
+}
+.ForeCastItem7 .ForeCastItem-Details .ConditionBox p{
+    background-color: transparent;
+}
+.ForeCastItem7 .ForeCastItem-Details .ConditionBox img{
+    width: 100px;
+
+}
+footer {
+    width: 100%;
+    height: 10vh; 
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 1100px;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    background-color: #8b908cfd;
+    padding: 0.5em;
+  }
+
+  
+  footer .App-Logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0em;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0em;
+  }
+ 
+  footer .DesignerInfo {
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0em;
+  }
+  footer .DesignerInfo #Name {
+    color: rgb(148, 34, 129);
+    font-size: 20px;
+  }
+  footer .SocialMedia {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 20%;
+    height: 100%;
+  }
+   footer .SocialMedia a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0em;
+    border: 1px solid rgb(255, 0, 162);
+    border-radius: 50%;
+    padding: 0.5em;
+    color: white;
+  }
+  footer .SocialMedia a:hover i {
+    transform: scale(1.3);
+    color: orange;
+  }
+  
